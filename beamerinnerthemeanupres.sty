@@ -1,0 +1,75 @@
+\mode<presentation>
+
+% Title page
+\defbeamertemplate*{title page}{anupres}[1][]
+{ 
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  
+  %%%%%%%%%%Change the background picture in the title page%%%%%%%%%%%
+  \node[inner sep=0pt] (EKE_plot) at (\paperwidth/2.4,\paperwidth/2.2)
+    {\includegraphics[width=1.2\paperwidth]{./logos/figure}};
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \fill[color=white!50!,opacity=0.6] (-1,2.05) rectangle (\the\paperwidth,3.5);
+  \fill[color=black!50!gray!80] (-1,0) rectangle(2.3,2.05);
+  
+  \if@doANU
+  \node[inner sep=0pt] (anu_logo) at (0.6,1)
+    {\includegraphics[width=0.18\textwidth]{./logos/ANU_logo}};
+  \else
+     \if@doCLEX
+     \node[inner sep=0pt] (anu_logo) at (0,1)
+       {\includegraphics[width=0.18\textwidth]{./logos/ANU_logo}};
+     \node[inner sep=0pt] (arccss_logo) at (1.7,1)
+       {\includegraphics[width=0.08\textwidth]{./logos/CLEX_logo}};
+     \else
+         \if@doADDIT
+         \node[inner sep=0pt] (anu_logo) at (0,1.5)
+            {\includegraphics[width=0.18\textwidth]{./logos/ANU_logo}};
+         \node[inner sep=0pt] (arccss_logo) at (1.7,1.5)
+            {\includegraphics[width=0.08\textwidth]{./logos/CLEX_logo}};
+         \node[inner sep=0pt] (conacyt_logo) at (0.7,0.6)
+            {\includegraphics[width=0.2\textwidth]{./logos/ADDIT_logo}};
+         \else
+            \node[inner sep=0pt] (anu_logo) at (0,1.5)
+            {\includegraphics[width=0.18\textwidth]{./logos/ANU_logo}};
+         \fi
+     \fi
+  \fi
+    
+  \fill[color=gray!50!cyan!80!blue!50] (2.3,0) rectangle(\the\paperwidth,2.05);
+  \ifnum\thepage>1\relax%
+   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fi
+  
+  \node[inner sep=0pt] (title_node) at (\paperwidth/2.35,3.0){
+  \begin{beamercolorbox}[wd=\paperwidth,sep=8pt,#1]{title page header}
+      \centering
+      \usebeamerfont{title}\textbf{\inserttitle}\par%
+    \end{beamercolorbox}%
+   };
+    \node[inner sep=0pt] (author_node) at (\paperwidth/2.35,1.55){
+  \begin{beamercolorbox}[wd=12cm,leftskip=3.1cm,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+   };
+   
+   \node[inner sep=0pt] (institute_node) at (\paperwidth/2.35,1){
+  \begin{beamercolorbox}[wd=12cm,leftskip=3.1cm,#1]{institute}
+      \usebeamerfont{author}\insertinstitute%
+    \end{beamercolorbox}
+   };
+   
+   \node[inner sep=0pt] (date_node) at (\paperwidth/2.35,0.45){
+ \begin{beamercolorbox}[wd=12cm,leftskip=3.1cm,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+   };
+
+ 
+  \end{tikzpicture}
+  \vfill
+}
+
+\mode
+<all>

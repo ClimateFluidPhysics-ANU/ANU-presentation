@@ -1,0 +1,5 @@
+\select@language {australian}
+\beamer@sectionintoc {1}{Section}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Subsection}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Subsection}{4}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{Subsubsection}{4}{0}{1}

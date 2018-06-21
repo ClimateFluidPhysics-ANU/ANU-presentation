@@ -1,0 +1,30 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+
+% Settings
+\useinnertheme{anupres}
+\useoutertheme{anupres}
+\usecolortheme{anupres}
+
+\newif\if@doANU
+\@doANUfalse
+\DeclareOption{ANU}{\@doANUtrue}
+\newif\if@doCLEX
+\@doCLEXfalse
+\DeclareOption{CLEX}{\@doCLEXtrue}
+\newif\if@doADDIT
+\@doADDITfalse
+\DeclareOption{ADDITIONAL}{\@doADDITtrue}
+\ProcessOptions
+
+\setbeamercolor{structure}{fg=black}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+\setbeamertemplate{section in toc}{{\color{blue!70!black!60}\inserttocsectionnumber.}~\inserttocsection}
+\setbeamertemplate{subsection in toc}{\hspace{1.2em}{\color{cyan!80!black!60}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\mode<all>
